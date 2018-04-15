@@ -15,6 +15,5 @@ public class TripManagerTest {
 		assertEquals(1, trip.getPhotos().size());
 	}
 	
-	@Test
-	public void 
+
 }
