@@ -1,10 +1,14 @@
 package pl.edu.agh.mwo;
 
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
 public class PhotoTest {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	@Test
+	public void createPhoto() {	
+		Photo photo = new Photo("Gdansk, Gdynia, Sopot");
+		assertEquals("Gdansk, Gdynia, Sopot", photo.comment);	
 	}
-
+	
 }
