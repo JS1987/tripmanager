@@ -50,4 +50,16 @@ public class TripManagerTest {
 		assertEquals(trip1, tm.findTrip("delegacja1"));	
 	}
 	
+	@Test
+	public void tripNotFound() {	
+		TripManager tm = new TripManager();
+		Trip trip = new Trip("delegacja", "PSE");
+		tm.addTrip(trip);
+		Trip trip1 = new Trip("delegacja1", "energa");
+		tm.addTrip(trip1);
+		Trip trip2 = new Trip("delegacja2", "PGE");
+		tm.addTrip(trip2);
+		assertEquals(null, tm.findTrip("Tauron"));	
+	}	
+	
 }
