@@ -16,5 +16,14 @@ public class TripManagerTest {
 	
 	}
 
+	@Test
+	public void removeTrip() {	
+		TripManager tm = new TripManager();
+		Trip trip = new Trip("delegacja", "PSE");
+		tm.addTrip(trip);
+		assertEquals(1, tm.getTrips().size());	
+		tm.removeTrip(trip);
+		assertEquals(0, tm.getTrips().size());	
+	}
 
 }
