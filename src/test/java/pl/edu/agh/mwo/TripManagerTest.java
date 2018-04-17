@@ -62,4 +62,22 @@ public class TripManagerTest {
 		assertEquals(null, tm.findTrip("Tauron"));	
 	}	
 	
+	@Test
+	public void findTripByPhoto() {	
+		TripManager tm = new TripManager();
+		Trip trip = new Trip("delegacja", "PSE");
+		Photo photo = new Photo("FAT");
+		trip.addPhoto(photo);
+		tm.addTrip(trip);
+		Trip trip1 = new Trip("delegacja1", "energa");
+		Photo photo1 = new Photo("FAT");
+		Photo photo2 = new Photo("SAT");
+		trip1.addPhoto(photo1);
+		trip1.addPhoto(photo2);
+		tm.addTrip(trip1);
+		Trip trip2 = new Trip("delegacja2", "PGE");
+		tm.addTrip(trip2);
+		assertEquals(trip1, tm.findTrip("SAT"));	
+	}
+	
 }
