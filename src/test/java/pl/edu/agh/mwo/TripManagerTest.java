@@ -7,14 +7,14 @@ import org.junit.Test;
 public class TripManagerTest {
 	
 	@Test
-	public void addPhoto() {
-		Trip trip = new Trip();
-		Photo photo = new Photo();
-		assertEquals(0, trip.getPhotos().size());
-		trip.addPhoto(photo);
-		assertEquals(1, trip.getPhotos().size());
+	public void addTrip() {	
+		TripManager tm = new TripManager();
+		Trip trip = new Trip("delegacja", "PSE");
+		assertEquals(0, tm.getTrips().size());	
+		tm.addTrip(trip);
+		assertEquals(1, tm.getTrips().size());
+	
 	}
-	
 
-	
+
 }
