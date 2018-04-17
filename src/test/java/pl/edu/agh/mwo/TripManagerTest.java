@@ -26,4 +26,28 @@ public class TripManagerTest {
 		assertEquals(0, tm.getTrips().size());	
 	}
 
+	@Test
+	public void findTripByDescription() {	
+		TripManager tm = new TripManager();
+		Trip trip = new Trip("delegacja", "PSE");
+		tm.addTrip(trip);
+		Trip trip1 = new Trip("delegacja1", "energa");
+		tm.addTrip(trip1);
+		Trip trip2 = new Trip("delegacja2", "PGE");
+		tm.addTrip(trip2);
+		assertEquals(trip2, tm.findTrip("PGE"));	
+	}
+	
+	@Test
+	public void findTripByName() {	
+		TripManager tm = new TripManager();
+		Trip trip = new Trip("delegacja", "PSE");
+		tm.addTrip(trip);
+		Trip trip1 = new Trip("delegacja1", "energa");
+		tm.addTrip(trip1);
+		Trip trip2 = new Trip("delegacja2", "PGE");
+		tm.addTrip(trip2);
+		assertEquals(trip1, tm.findTrip("delegacja1"));	
+	}
+	
 }
